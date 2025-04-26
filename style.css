@@ -1,126 +1,110 @@
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Poppins', Arial, sans-serif;
-  background: #f5f7fa;
+  background: #f5f8fa;
 }
-
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #003366;
-  color: white;
-  padding: 10px 30px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 60px;
+  justify-content: space-between;
 }
-
 .navbar-left {
   display: flex;
   align-items: center;
 }
-
 .logo {
-  height: 40px;
-  margin-right: 10px;
+  height: 38px;
+  margin-right: 12px;
 }
-
 .brand-name {
-  font-size: 24px;
   font-weight: bold;
+  font-size: 1.3em;
 }
-
 .navbar-center {
-  list-style: none;
   display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   gap: 20px;
 }
-
-.navbar-center li {
-  display: inline;
-}
-
-.navbar-center a {
-  color: white;
+.navbar-center li a {
+  color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
-
-.navbar-center a:hover {
-  text-decoration: underline;
+.navbar-center li a.active, .navbar-center li a:hover {
+  background: #0056b3;
 }
-
 .navbar-right .login-btn {
-  background: white;
-  color: #003366;
-  padding: 8px 16px;
-  border-radius: 20px;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-}
-
-.login-btn:hover {
-  background: #ff9900;
-  color: white;
-}
-
-.main-section {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.main-section h1 {
-  margin-bottom: 30px;
-  color: #003366;
-}
-
-.doctors-table {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1000px;
-  border-collapse: collapse;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.doctors-table th, .doctors-table td {
-  padding: 15px;
-  border: 1px solid #ddd;
-}
-
-.doctors-table th {
-  background: #007bff;
-  color: white;
-}
-
-.doctors-table tr:nth-child(even) {
-  background: #f2f2f2;
-}
-
-/* Login Status Styles */
-.login-status {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.logged-in-message {
-  background-color: #d1e7dd;
-  color: #0f5132;
-  padding: 10px 20px;
-  margin: 20px auto;
-  width: fit-content;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.logout-btn {
-  background: #dc3545;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  margin-left: 10px;
+  background: #0056b3;
+  padding: 8px 18px;
   border-radius: 6px;
-  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
 }
-
-.logout-btn:hover {
-  background: #a71d2a;
+.navbar-right .login-btn:hover {
+  background: #0074d9;
+}
+.main-section {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 0 16px;
+}
+.main-section h1 {
+  color: #003366;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.system-grid, .subsystem-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.system-box {
+  background: #0056b3;
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  width: 320px;
+  min-height: 70px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  position: relative;
+  padding: 24px 28px 18px 28px;
+  font-size: 1.18em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.system-box:hover {
+  background: #003366;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.system-title {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 24px;
+}
+@media (max-width: 700px) {
+  .system-box {
+      width: 95vw;
+      min-width: unset;
+      font-size: 1em;
+      padding: 18px 8px 14px 8px;
+  }
 }
