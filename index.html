@@ -2,26 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Doctors Availability | SASTRA University</title>
+    <title>Doctors Availability | CO-DOCTOR</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .system-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .system-box {
+            background: #0056b3;
+            color: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            width: 320px;
+            min-height: 70px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+            position: relative;
+            padding: 24px 28px 18px 28px;
+            font-size: 1.18em;
+        }
+        .system-box:hover {
+            background: #003366;
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+        .system-title {
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+        .subsystem-list {
+            background: #e6f0ff;
+            color: #003366;
+            border-radius: 12px;
+            margin-top: 18px;
+            padding: 16px 20px;
+            font-size: 1em;
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        .system-box.active .subsystem-list {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .main-section h1 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-left">
-            <img src="logo.jpg" alt="SASTRA Logo" class="logo">
-            <span class="brand-name">SASTRA University</span>
+            <img src="logo.jpg" class="logo" alt="CO-DOCTOR Logo">
+            <span class="brand-name">CO-DOCTOR</span>
         </div>
         <ul class="navbar-center">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Academics</a></li>
-            <li><a href="#">Admissions</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Infrastructure</a></li>
-            <li><a href="#">Useful-Links</a></li>
-            <li><a href="#">Parents Corner</a></li>
-            <li><a href="#">Student Activities</a></li>
         </ul>
         <div class="navbar-right">
             <a href="login.html" class="login-btn">Login</a>
@@ -30,59 +76,59 @@
 
     <!-- Main Section -->
     <section class="main-section">
-        <h1>Hospital Departments & Subsystems</h1>
-        <ol style="max-width: 800px; margin: 0 auto; text-align: left; font-size: 1.1em;">
-            <li>
-                <strong>Respiratory Medicine (Pulmo)</strong>
-                <ul>
+        <h1>Hospital Systems</h1>
+        <div class="system-grid">
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">1. Respiratory Medicine (Pulmo)</div>
+                <ul class="subsystem-list">
                     <li>RICU</li>
                     <li>TB and exam ward</li>
                     <li>OP</li>
                     <li>Casualty</li>
                 </ul>
-            </li>
-            <li>
-                <strong>Pediatrics</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">2. Pediatrics</div>
+                <ul class="subsystem-list">
                     <li>Wards</li>
                     <li>PICU</li>
                     <li>OP</li>
                 </ul>
-            </li>
-            <li>
-                <strong>General Surgery</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">3. General Surgery</div>
+                <ul class="subsystem-list">
                     <li>OP</li>
                     <li>Wards</li>
                 </ul>
-            </li>
-            <li>
-                <strong>Radiology</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">4. Radiology</div>
+                <ul class="subsystem-list">
                     <li>Morning</li>
                     <li>Afternoon</li>
                     <li>Night</li>
                 </ul>
-            </li>
-            <li>
-                <strong>ENT</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">5. ENT</div>
+                <ul class="subsystem-list">
                     <li>Casualty</li>
                     <li>Ward</li>
                 </ul>
-            </li>
-            <li>
-                <strong>Orthopedics</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">6. Orthopedics</div>
+                <ul class="subsystem-list">
                     <li>OP</li>
                     <li>Ward/Casualty</li>
                     <li>OT</li>
                     <li>Casualty</li>
                 </ul>
-            </li>
-            <li>
-                <strong>SPM (Community Medicine)</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">7. SPM (Community Medicine)</div>
+                <ul class="subsystem-list">
                     <li>Gudihattham</li>
                     <li>Khurikidivagas</li>
                     <li>Psychiatry</li>
@@ -91,10 +137,10 @@
                     <li>SUC</li>
                     <li>Department</li>
                 </ul>
-            </li>
-            <li>
-                <strong>Casualty</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">8. Casualty</div>
+                <ul class="subsystem-list">
                     <li>CMO (8am-2pm, 2pm-8pm, 8pm-12am, 8pm-8am)</li>
                     <li>COTM (medical/surgical)</li>
                     <li>DSO (surgery)</li>
@@ -103,10 +149,10 @@
                     <li>Ophthal</li>
                     <li>Psy</li>
                 </ul>
-            </li>
-            <li>
-                <strong>Medicine</strong>
-                <ul>
+            </div>
+            <div class="system-box" onclick="toggleSubsystem(this)">
+                <div class="system-title">9. Medicine</div>
+                <ul class="subsystem-list">
                     <li>MICU</li>
                     <li>COTM</li>
                     <li>BCCO</li>
@@ -114,6 +160,18 @@
                     <li>FMW</li>
                     <li>OP</li>
                 </ul>
-            </li>
-        </ol>
+            </div>
+        </div>
     </section>
+    <script>
+        // Only one box open at a time
+        function toggleSubsystem(box) {
+            const allBoxes = document.querySelectorAll('.system-box');
+            allBoxes.forEach(b => {
+                if (b !== box) b.classList.remove('active');
+            });
+            box.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
