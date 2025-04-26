@@ -4,12 +4,55 @@
     <meta charset="UTF-8">
     <title>System Details | CO-DOCTOR</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .main-section {
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            padding: 0 16px;
+        }
+        .system-title {
+            font-weight: 600;
+            font-size: 1.3em;
+            color: #003366;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .subsystem-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .subsystem-box {
+            background: #e6f0ff;
+            color: #0056b3;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            width: 260px;
+            min-height: 50px;
+            margin-bottom: 10px;
+            padding: 20px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .subsystem-box {
+                width: 95vw;
+                font-size: 1em;
+                padding: 14px 6px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-left">
-            <img src="logo.jpg" class="logo" alt="CO-DOCTOR Logo">
+            <img src="logo.jpeg" class="logo" alt="CO-DOCTOR Logo">
             <span class="brand-name">CO-DOCTOR</span>
         </div>
         <ul class="navbar-center">
@@ -79,7 +122,7 @@
             title.innerHTML = `${systemId}. ${system.name}`;
             let html = '';
             for (const sub of system.subsystems) {
-                html += `<div class="system-box">${sub}</div>`;
+                html += `<div class="subsystem-box">${sub}</div>`;
             }
             grid.innerHTML = html;
         }
@@ -87,4 +130,5 @@
     </script>
 </body>
 </html>
+
 
