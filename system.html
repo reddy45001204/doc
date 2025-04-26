@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Details | CO-DOCTOR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .system-detail-box {
+            background: #0056b3;
+            color: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            width: 90%;
+            max-width: 500px;
+            margin: 60px auto 0 auto;
+            padding: 32px 32px 24px 32px;
+            font-size: 1.18em;
+            text-align: left;
+        }
+        .system-title {
+            font-weight: 600;
+            font-size: 1.3em;
+            margin-bottom: 18px;
+        }
+        .subsystem-list {
+            background: #e6f0ff;
+            color: #003366;
+            border-radius: 12px;
+            margin-top: 18px;
+            padding: 16px 20px;
+            font-size: 1em;
+            list-style: disc inside;
+        }
+        .back-home {
+            display: block;
+            margin: 30px auto 0 auto;
+            text-align: center;
+            color: #003366;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="logo.jpg" class="logo" alt="CO-DOCTOR Logo">
+            <span class="brand-name">CO-DOCTOR</span>
+        </div>
+        <ul class="navbar-center">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <div class="navbar-right">
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <section class="main-section">
+        <div class="system-detail-box" id="system-detail">
+            <!-- Content will be filled by JS -->
+        </div>
+    </section>
+    <script>
+        // Data for all systems and their subsystems
+        const systems = [
+            {
+                id: 1,
+                name: "Respiratory Medicine (Pulmo)",
+                subsystems: ["RICU", "TB and exam ward", "OP", "Casualty"]
+            },
+            {
+                id: 2,
+                name: "Pediatrics",
+                subsystems: ["Wards", "PICU", "OP"]
+            },
+            {
+                id: 3,
+                name: "General Surgery",
+                subsystems: ["OP", "Wards"]
+            },
+            {
+                id: 4,
+                name: "Radiology",
+                subsystems: ["Morning", "Afternoon", "Night"]
+            },
+            {
+                id: 5,
+                name: "ENT",
+                subsystems: ["Casualty", "Ward"]
+            },
+            {
+                id: 6,
+                name: "Orthopedics",
+                subsystems: ["OP", "Ward/Casualty", "OT", "Casualty"]
+            },
+            {
+                id: 7,
+                name: "SPM (Community Medicine)",
+                subsystems: ["Gudihattham", "Khurikidivagas", "Psychiatry", "CS", "DTC", "SUC", "Department"]
+            },
+            {
+                id: 8,
+                name: "Casualty",
+                subsystems: [
+                    "CMO (8am-2pm, 2pm-8pm, 8pm-12am, 8pm-8am)",
+                    "COTM (medical/surgical)",
+                    "DSO (surgery)",
+                    "Pulmo (casualty/other)",
+                    "ENT",
+                    "Ophthal",
+                    "Psy"
+                ]
+            },
+            {
+                id: 9,
+                name: "Medicine",
+                subsystems: ["MICU", "COTM", "BCCO", "MMW", "FMW", "OP"]
+            },
+            {
+                id: 10,
+                name: "OBG & Labour Room",
+                subsystems: [
+                    "Labour Room (Morning/Night)",
+                    "Admissions",
+                    "HDU",
+                    "Labour Room Intern",
+                    "POW 1",
+                    "POW 2",
+                    "PHW",
+                    "OP"
+                ]
+            },
+            {
+                id: 11,
+                name: "Anaesthesia",
+                subsystems: [
+                    "SS H",
+                    "Old Building",
+                    "Full Duty"
+                ]
+            }
+        ];
+
+        // Get system id from URL
+        function getSystemId() {
+            const params = new URLSearchParams(window.location.search);
+            return parseInt(params.get('system'), 10);
+        }
+
+        function renderSystem() {
+            const systemId = getSystemId();
+            const system = systems.find(s => s.id === systemId);
+            const container = document.getElementById('system-detail');
+            if (!system) {
+                container.innerHTML = "<div>System not found. <a href='index.html'>Go Home</a></div>";
+                return;
+            }
+            let html = `<div class="system-title">${systemId}. ${system.name}</div>`;
+            html += `<ul class="subsystem-list">`;
+            for (const sub of system.subsystems) {
+                html += `<li>${sub}</li>`;
+            }
+            html += `</ul>`;
+            html += `<a href="index.html" class="back-home">← Back to Home</a>`;
+            container.innerHTML = html;
+        }
+        renderSystem();
+    </script>
+</body>
+</html>
