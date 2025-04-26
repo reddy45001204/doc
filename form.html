@@ -2,120 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Doctors Availability | SASTRA University</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Details</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-left">
-            <img src="logo.jpg" alt="SASTRA Logo" class="logo">
-            <span class="brand-name">SASTRA University</span>
-        </div>
-        <ul class="navbar-center">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Academics</a></li>
-            <li><a href="#">Admissions</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Infrastructure</a></li>
-            <li><a href="#">Useful-Links</a></li>
-            <li><a href="#">Parents Corner</a></li>
-            <li><a href="#">Student Activities</a></li>
-        </ul>
-        <div class="navbar-right">
-            <a href="login.html" class="login-btn">Login</a>
-        </div>
-    </nav>
-
-    <!-- Main Section -->
-    <section class="main-section">
-        <h1>Hospital Departments & Subsystems</h1>
-        <ol style="max-width: 800px; margin: 0 auto; text-align: left; font-size: 1.1em;">
-            <li>
-                <strong>Respiratory Medicine (Pulmo)</strong>
-                <ul>
-                    <li>RICU</li>
-                    <li>TB and exam ward</li>
-                    <li>OP</li>
-                    <li>Casualty</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Pediatrics</strong>
-                <ul>
-                    <li>Wards</li>
-                    <li>PICU</li>
-                    <li>OP</li>
-                </ul>
-            </li>
-            <li>
-                <strong>General Surgery</strong>
-                <ul>
-                    <li>OP</li>
-                    <li>Wards</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Radiology</strong>
-                <ul>
-                    <li>Morning</li>
-                    <li>Afternoon</li>
-                    <li>Night</li>
-                </ul>
-            </li>
-            <li>
-                <strong>ENT</strong>
-                <ul>
-                    <li>Casualty</li>
-                    <li>Ward</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Orthopedics</strong>
-                <ul>
-                    <li>OP</li>
-                    <li>Ward/Casualty</li>
-                    <li>OT</li>
-                    <li>Casualty</li>
-                </ul>
-            </li>
-            <li>
-                <strong>SPM (Community Medicine)</strong>
-                <ul>
-                    <li>Gudihattham</li>
-                    <li>Khurikidivagas</li>
-                    <li>Psychiatry</li>
-                    <li>CS</li>
-                    <li>DTC</li>
-                    <li>SUC</li>
-                    <li>Department</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Casualty</strong>
-                <ul>
-                    <li>CMO (8am-2pm, 2pm-8pm, 8pm-12am, 8pm-8am)</li>
-                    <li>COTM (medical/surgical)</li>
-                    <li>DSO (surgery)</li>
-                    <li>Pulmo (casualty/other)</li>
-                    <li>ENT</li>
-                    <li>Ophthal</li>
-                    <li>Psy</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Medicine</strong>
-                <ul>
-                    <li>MICU</li>
-                    <li>COTM</li>
-                    <li>BCCO</li>
-                    <li>MMW</li>
-                    <li>FMW</li>
-                    <li>OP</li>
-                </ul>
-            </li>
-        </ol>
-    </section>
+    <div class="form-container">
+        <h2>Enter Your Details</h2>
+        <select id="college">
+            <option value="">Select College</option>
+            <option value="College A">College A</option>
+            <option value="College B">College B</option>
+        </select>
+        <select id="batch">
+            <option value="">Select Batch</option>
+            <option value="Batch 1">Batch 1</option>
+            <option value="Batch 2">Batch 2</option>
+        </select>
+        <input type="text" id="name" placeholder="Your Name">
+        <button onclick="submitDetails()" class="btn">Submit</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

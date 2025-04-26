@@ -2,82 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctors Availability | CO-DOCTOR</title>
+    <title>Doctors Availability | SASTRA University</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-left">
-            <img src="logo.jpeg"  class="logo">
-            <span class="brand-name">CO-DOCTOR</span>
+            <img src="logo.jpg" alt="SASTRA Logo" class="logo">
+            <span class="brand-name">SASTRA University</span>
         </div>
         <ul class="navbar-center">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="#">About</a></li>
+            <li><a href="#">Academics</a></li>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Infrastructure</a></li>
+            <li><a href="#">Useful-Links</a></li>
+            <li><a href="#">Parents Corner</a></li>
+            <li><a href="#">Student Activities</a></li>
         </ul>
         <div class="navbar-right">
             <a href="login.html" class="login-btn">Login</a>
         </div>
     </nav>
 
-    <!-- Doctor Credentials -->
-    <div id="doctor-credentials" style="text-align:center; font-weight:bold; margin-top:20px;"></div>
-
     <!-- Main Section -->
     <section class="main-section">
-        <h1>Doctors Availability</h1>
-        <table class="doctors-table">
-            <thead>
-                <tr>
-                    <th>Batch</th>
-                    <th>Doctor Name</th>
-                    <th>Phone Number</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Batch 1</td>
-                    <td>Dr. John Smith</td>
-                    <td>123-456-7890</td>
-                </tr>
-                <tr>
-                    <td>Batch 1</td>
-                    <td>Dr. Emily Johnson</td>
-                    <td>987-654-3210</td>
-                </tr>
-                <tr>
-                    <td>Batch 2</td>
-                    <td>Dr. Michael Lee</td>
-                    <td>555-666-7777</td>
-                </tr>
-                <tr>
-                    <td>Batch 2</td>
-                    <td>Dr. Sarah Brown</td>
-                    <td>111-222-3333</td>
-                </tr>
-            </tbody>
-        </table>
+        <h1>Hospital Departments & Subsystems</h1>
+        <ol style="max-width: 800px; margin: 0 auto; text-align: left; font-size: 1.1em;">
+            <li>
+                <strong>Respiratory Medicine (Pulmo)</strong>
+                <ul>
+                    <li>RICU</li>
+                    <li>TB and exam ward</li>
+                    <li>OP</li>
+                    <li>Casualty</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Pediatrics</strong>
+                <ul>
+                    <li>Wards</li>
+                    <li>PICU</li>
+                    <li>OP</li>
+                </ul>
+            </li>
+            <li>
+                <strong>General Surgery</strong>
+                <ul>
+                    <li>OP</li>
+                    <li>Wards</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Radiology</strong>
+                <ul>
+                    <li>Morning</li>
+                    <li>Afternoon</li>
+                    <li>Night</li>
+                </ul>
+            </li>
+            <li>
+                <strong>ENT</strong>
+                <ul>
+                    <li>Casualty</li>
+                    <li>Ward</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Orthopedics</strong>
+                <ul>
+                    <li>OP</li>
+                    <li>Ward/Casualty</li>
+                    <li>OT</li>
+                    <li>Casualty</li>
+                </ul>
+            </li>
+            <li>
+                <strong>SPM (Community Medicine)</strong>
+                <ul>
+                    <li>Gudihattham</li>
+                    <li>Khurikidivagas</li>
+                    <li>Psychiatry</li>
+                    <li>CS</li>
+                    <li>DTC</li>
+                    <li>SUC</li>
+                    <li>Department</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Casualty</strong>
+                <ul>
+                    <li>CMO (8am-2pm, 2pm-8pm, 8pm-12am, 8pm-8am)</li>
+                    <li>COTM (medical/surgical)</li>
+                    <li>DSO (surgery)</li>
+                    <li>Pulmo (casualty/other)</li>
+                    <li>ENT</li>
+                    <li>Ophthal</li>
+                    <li>Psy</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Medicine</strong>
+                <ul>
+                    <li>MICU</li>
+                    <li>COTM</li>
+                    <li>BCCO</li>
+                    <li>MMW</li>
+                    <li>FMW</li>
+                    <li>OP</li>
+                </ul>
+            </li>
+        </ol>
     </section>
-
-    <!-- Script to show doctor credentials -->
-    <script>
-        // Show logged-in doctor's credentials if available
-        window.onload = function() {
-            const loggedIn = localStorage.getItem('loggedIn');
-            const name = localStorage.getItem('name');
-            const batch = localStorage.getItem('batch');
-            if (loggedIn && name && batch) {
-                document.getElementById('doctor-credentials').innerText =
-                    `Logged in as: Dr. ${name} (Batch: ${batch})`;
-            } else {
-                document.getElementById('doctor-credentials').innerText = '';
-            }
-        };
-    </script>
-</body>
-</html>
-
-
